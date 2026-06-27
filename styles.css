@@ -1,0 +1,124 @@
+body {
+    font-family: "Microsoft YaHei", sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#main-screen, #game-screen, #result-screen {
+    display: none;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.active {
+    display: block !important;
+}
+
+h1 {
+    color: black;
+    /* 标题黑色 */
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+#start-btn {
+    background-color: #5cb85c;
+    color: white;
+}
+
+.option {
+    display: block;
+    width: 80%;
+    margin: 8px auto;
+    padding: 12px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.option:not(.disabled):hover {
+    background-color: #f0f0f0;
+}
+
+.option.disabled {
+    opacity: 0.7;
+}
+
+.correct {
+    background-color: #d4edda !important;
+    border-color: #28a745 !important;
+}
+
+.incorrect {
+    background-color: #f8d7da !important;
+    border-color: #dc3545 !important;
+}
+
+#timer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+
+#timer.warning {
+    color: red;
+}
+
+#explanation {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    white-space: pre-line;
+    text-align: left;
+    display: none;
+}
+
+#next-btn {
+    margin-top: 10px;
+}
+
+#result-screen {
+    text-align: center;
+}
+
+#grade-card {
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+}
+
+#grade-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#grade-desc {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #555;
+}

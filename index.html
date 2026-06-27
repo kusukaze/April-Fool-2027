@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2027年4月J?LPT试题！</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/umetro_icon.png" type="image/png">
+</head>
+
+<body>
+
+<div id="main-screen" class="active">
+    <h1>2027年4月J?LPT试题！</h1>
+    <button id="start-btn">开始游戏</button>
+</div>
+
+<div id="game-screen">
+    <div id="timer">120</div>
+    <h2>第 <span id="current-q">1</span> / <span id="total-q">5</span> 题</h2>
+    <p id="question" style="white-space: pre-line;"></p>
+    <div id="options"></div>
+    <div id="explanation"></div>
+    <button id="next-btn" style="display:none;">下一题</button>
+</div>
+
+<div id="result-screen">
+    <h2>答题结束！</h2>
+    <p>你答对了 <span id="score">0</span> / <span id="total">5</span> 题</p>
+    <div id="grade-card">
+        <div id="grade-title"></div>
+        <div id="grade-desc"></div>
+    </div>
+    <button id="restart-btn">再玩一次</button>
+</div>
+
+<script src="data.js"></script>
+<script src="run.js"></script>
+
+</body>
+
+</html>
