@@ -137,9 +137,10 @@ const questions = [
 ];
 
 const grades = [
-    { min: 0, max: 3, title: "N5", desc: "/(ㄒoㄒ)/~~ 呜呜，该测评结果不反映真实日语水平。", color: "#9999ff" },
+    { min: 0, max: 0, title: "N1", desc: "w(ﾟДﾟ)w 阁下莫非是物理与天文学院的大佬……而且是故意全选错？", color: "#ff99ff" }
+    { min: 1, max: 3, title: "N5", desc: "/(ㄒoㄒ)/~~ 呜呜，该测评结果不反映真实日语水平。", color: "#9999ff" },
     { min: 4, max: 6, title: "N4", desc: "`(*>﹏<*)′ 题目出难了，不过能做对这些已经很可以啦~", color: "#5fd9b7" },
     { min: 7, max: 9, title: "N3", desc: "\\^o^/ 很不错哦~(无论是日语还是天文学知识)", color: "#ffa051" },
     { min: 10, max: 12, title: "N2", desc: "( •̀ ω •́ )✧ 看来你真的很喜欢キラキラドキドキ的东西！", color: "#66ccff" },
-    { min: 13, max: 15, title: "N1", desc: "w(ﾟДﾟ)w 阁下莫非是物理与天文学院的大佬？", color: "#ff99ff" },
+    { min: 13, max: 15, title: "N1", desc: "w(ﾟДﾟ)w 阁下莫非是物理与天文学院的大佬？", color: "#ff99ff" }
 ];
