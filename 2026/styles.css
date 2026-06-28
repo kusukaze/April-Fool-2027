@@ -1,0 +1,194 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.health-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.role-thumbnail {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #3498db;
+}
+
+.health-text {
+    white-space: nowrap; /* 防止文字换行 */
+}
+
+#health-bar {
+    width: 200px;
+    height: 10px;
+    background-color: #ddd;
+    margin-top: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#health-bar::after {
+    content: '';
+    display: block;
+    height: 100%;
+    background-color: #28a745; /* 默认绿色 */
+    width: 100%;
+}
+
+#health-bar.low-health::after {
+    background-color: #dc3545;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.option {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.option.correct {
+    background-color: #28a745;
+}
+
+.option.wrong {
+    background-color: #dc3545;
+}
+
+.option.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.roles {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.role {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.role img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #3498db;
+    transition: transform 0.3s ease;
+}
+
+.role:hover img {
+    transform: scale(1.1);
+}
+
+.role-info {
+    margin-top: 10px;
+}
+
+.role-info h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.role-info p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #666;
+}
+
+#question {
+    width: 80%;
+    white-space: pre-line;
+}
+
+#question-number {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#timer {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#timer.low-time {
+    color: #dc3545;
+}
+
+.difficulty {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.difficulty button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.difficulty button:hover {
+    opacity: 0.8;
+}
+.easy button {
+    background-color: #66ccaa;
+    color: black;
+}
+.medium button {
+    background-color: #66ccff;
+    color: black;
+}
+.hard button {
+    background-color: #ff99ff;
+    color: black;
+}
+.description {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.head-display {
+    height: 10vh;
+    transition: opacity 0.5s ease-in-out;
+}

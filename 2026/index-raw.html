@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026年4月JLPT试题！</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="img/umetro_icon.png">
+</head>
+<body>
+<!-- 主页面 -->
+<div id="main-page" class="page">
+    <h1>2026年4月日本语能力测试</h1>
+    <h1>N?</h1>
+    <p>规则：满分180分，得分100分以上为挑战成功。</p>
+    <p></p>
+    <button id="start-game">开始游戏</button>
+</div>
+
+<!-- 难度选择页面 -->
+<div id="difficulty-page" class="page hidden">
+    <!-- 简单难度 -->
+    <div class="difficulty easy">
+        <button id="difficulty-easy">EASY</button>
+        <div class="description">推荐等级：N5~N4</div>
+    </div>
+
+    <!-- 中等难度 -->
+    <div class="difficulty medium">
+        <button id="difficulty-normal">NORMAL</button>
+        <div class="description">推荐等级：N3~N2</div>
+    </div>
+
+    <!-- 困难难度 -->
+    <div class="difficulty hard">
+        <button id="difficulty-hard">HARD</button>
+        <div class="description">推荐等级：N1</div>
+    </div>
+
+</div>
+
+<!-- 角色选择页面 -->
+<div id="role-page" class="page hidden">
+    <h1>选择你的角色</h1>
+    <div class="roles">
+        <div class="role" data-role="kusukaze">
+            <img src="img/kusukaze.png" alt="楠风">
+            <div class="role-info">
+                <h3>楠风</h3>
+                <p>技能：幸运护身符</p>
+                <p>大幅降低尺度得点暴击概率</p>
+            </div>
+        </div>
+        <div class="role" data-role="kokome">
+            <img src="img/kokome.png" alt="心芽">
+            <div class="role-info">
+                <h3>心芽</h3>
+                <p>技能：言灵护盾</p>
+                <p>大幅提升尺度得点扣分减少概率</p>
+            </div>
+        </div>
+        <div class="role" data-role="hikari">
+            <img src="img/hikari.png" alt="光">
+            <div class="role-info">
+                <h3>光</h3>
+                <p>技能：极速闪避</p>
+                <p>有20%的概率免疫伤害</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 答题页面 -->
+<div id="quiz-page" class="page hidden">
+    <h2 id="difficulty-text"></h2>
+    <div class="health-bar">
+        <!-- 角色缩略图片 -->
+        <img id="role-thumbnail" src="" alt="角色图片" class="role-thumbnail">
+        <!-- 血量文字 -->
+        <div class="health-text">得分: <span id="health-value">180</span></div>
+    </div>
+    <!-- 血条 -->
+    <div id="health-bar"></div>
+    <!-- 题号显示 -->
+    <div id="question-number">第 <span id="current-question">1</span> 题</div>
+    <!-- 计时器显示 -->
+    <div id="timer">剩余时间: <span id="time-left">60</span> 秒</div>
+    <h3 id="question"></h3>
+    <div class="options">
+        <button class="option" data-index="0"></button>
+        <button class="option" data-index="1"></button>
+        <button class="option" data-index="2"></button>
+        <button class="option" data-index="3"></button>
+    </div>
+</div>
+
+<!-- 游戏结束页面 -->
+<div id="game-over-page" class="page hidden">
+    <h2 id="difficulty-text-failure"></h2>
+    <img id="failure-role-thumbnail" src="" alt="角色图片" class="role-thumbnail">
+    <h1>游戏结束！</h1>
+    <p><span id="failure-sentence"></span></p>
+    <p>你答完的题数：<span id="final-progress">0</span></p>
+    <button id="confirm-end">确认</button>
+</div>
+
+<!-- 挑战成功页面 -->
+<div id="success-page" class="page hidden">
+    <h2 id="difficulty-text-success"></h2>
+    <img id="success-role-thumbnail" src="" alt="角色图片" class="role-thumbnail">
+    <h1>挑战成功！</h1>
+    <p><span id="success-sentence"></span></p>
+    <p>你的得分是：<span id="final-score">0</span></p>
+    <button id="confirm-success">确认</button>
+</div>
+
+<!-- 音效 -->
+<audio id="click-sound" src="sound/dl.wav"></audio>
+<audio id="correct-sound" src="sound/di.wav"></audio>
+<audio id="wrong-sound" src="sound/bi.wav"></audio>
+<audio id="win-sound" src="sound/tada.wav"></audio>
+<audio id="lose-sound" src="sound/th_pldead00.mp3"></audio>
+
+<script src="questions.js"></script>
+<script src="script-raw.js"></script>
+</body>
+</html>
