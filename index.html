@@ -54,27 +54,42 @@
         const startYear = 2026;
         const skippedYears = new Set([]);
 
-        const now = new Date();
-        let endYear;
-        if (now.getMonth() > 2 || (now.getMonth() === 2 && now.getDate() === 31 && now.getHours() >= 20)) {
-            endYear = now.getFullYear();
-        } else {
-            endYear = now.getFullYear() - 1;
-        }
-        endYear = Math.max(endYear, startYear);
-
         const container = document.getElementById('linksContainer');
+
         const pathParts = window.location.pathname.split('/').slice(0, -1);
         const basePath = window.location.origin + pathParts.join('/') + '/';
 
-        for (let year = startYear; year <= endYear; year++) {
-            if (skippedYears.has(year)) continue;
-            const link = document.createElement('a');
-            link.href = basePath + year;
-            link.target = '_blank';
-            link.textContent = `${year}`;
-            container.appendChild(link);
+        function updateLinks() {
+            container.innerHTML = '';
+
+            const now = new Date();
+            let endYear;
+            const month = now.getMonth();
+            const date = now.getDate();
+            const hours = now.getHours();
+
+            if (month > 2 || (month === 2 && date === 31 && hours >= 20)) {
+                endYear = now.getFullYear();
+            } else {
+                endYear = now.getFullYear() - 1;
+            }
+
+            endYear = Math.max(endYear, startYear);
+
+            for (let year = startYear; year <= endYear; year++) {
+                if (skippedYears.has(year)) continue;
+
+                const link = document.createElement('a');
+                link.href = basePath + year;
+                link.target = '_blank';
+                link.textContent = `${year}`;
+                link.style.display = 'block';
+                container.appendChild(link);
+            }
         }
+
+        updateLinks();
+        setInterval(updateLinks, 1000);
     </script>
 </body>
 </html>
